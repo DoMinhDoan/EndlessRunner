@@ -8,10 +8,16 @@ public class PlayerController : MonoBehaviour
     public float forwardMovementSpeed = 3.0f;
     private Rigidbody2D ridgidBody;
 
+    public LayerMask groundLayer;
+    public GameObject groundCheck;
+
+    private Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
         ridgidBody = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
@@ -22,5 +28,12 @@ public class PlayerController : MonoBehaviour
         }
 
         ridgidBody.velocity = new Vector2(forwardMovementSpeed, ridgidBody.velocity.y);
+
+        UpdateGroundStatus();
+    }
+
+    void UpdateGroundStatus()
+    {
+        animator.SetBool("isGrounded", Physics2D.OverlapCircle(groundCheck.transform.position, 0.1f, groundLayer));
     }
 }
