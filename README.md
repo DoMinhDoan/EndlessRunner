@@ -11,9 +11,9 @@ The project whose goal is to learning how to automatically generate endless map.
 * Map generator will be done automatically, basing on room prefab list configurated from GameManager.
 
 ![Game Scene](docgen/capture.png "Sample")
-* Changing. To do this:
+### Changing. To do this:
 1. Modify **Available Rooms**
-2. Folling **Background** prefab to create more. The most thing you need to look is 'Floor' - the hard code name used to get the width size for auto generate correct map.
+2. Folling **Background** prefab to create more. The most thing you need to look is `Floor` - the hard code name used to get the width size for auto generate correct map.
 
 ## Upgrading
 
