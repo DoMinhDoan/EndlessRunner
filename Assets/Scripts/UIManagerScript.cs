@@ -30,6 +30,8 @@ public class UIManagerScript : MonoBehaviour
     public Animator startAnimator;
     public Animator settingAnimator;
     public Animator dialogAnimator;
+    public Animator slidingMenuAnimator;
+    public Animator slidingMenuIconAnimator;
 
     public void StartGame() 
     {
@@ -49,5 +51,13 @@ public class UIManagerScript : MonoBehaviour
         settingAnimator.SetBool("isHidden", false);
 
         dialogAnimator.SetBool("isHidden", true);
+    }
+
+    public void OpenSlidingMenu()
+    {
+        bool isOpenned = slidingMenuAnimator.GetBool("isHidden");
+        slidingMenuAnimator.SetBool("isHidden", !isOpenned);
+
+        slidingMenuIconAnimator.SetTrigger("rotation");
     }
 }
