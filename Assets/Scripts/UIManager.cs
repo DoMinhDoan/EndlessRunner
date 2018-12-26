@@ -25,7 +25,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class UIManagerScript : MonoBehaviour 
+public class UIManager : MonoBehaviour 
 {
     public Animator startAnimator;
     public Animator settingAnimator;
@@ -33,9 +33,12 @@ public class UIManagerScript : MonoBehaviour
     public Animator slidingMenuAnimator;
     public Animator slidingMenuIconAnimator;
 
+    // Game State
+    public GameObject mainMenuUI;
+
     public void StartGame() 
     {
-        SceneManager.LoadScene("SampleScene");
+        mainMenuUI.SetActive(false);
     }
 
     public void OpenSetting()
